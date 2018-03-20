@@ -2,7 +2,13 @@
 
 <div class="">
   <ul>
-    <li *ngFor='let goal of goals'>{{goal.id}}.- {{goal.name}}</li>
+    <!-- <li *ngFor='let goal of goals'>{{goal.id}}.- {{goal.name}}</li> -->
+
+    <!-- Input Property binding -->
+    <div *ngFor='let goal of goals'>
+      <li>{{goal.name}}</li>
+      <app-goal-details [goal]='goal'></app-goal-details>
+    </div>
   </ul>
   <!-- create *ngIf directive that adds some conditional logic to our templates. -->
   <p *ngIf='goals.length > 5'>You have too many goals</p>
