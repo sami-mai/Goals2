@@ -41,6 +41,7 @@ export class GoalComponent implements OnInit {
                this.goals.splice(index,1);
                }
                }
+               
   constructor() { }
 
   ngOnInit() {
