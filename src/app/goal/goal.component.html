@@ -11,11 +11,19 @@
     </div> -->
 
     <!-- Output Property binding -->
-    <div *ngFor='let goal of goals;let i = index'>
+    <!-- <div *ngFor='let goal of goals;let i = index'>
       <li>{{goal.name}}</li>
       <button (click)='toogleDetails(i)'>Toogle Details</button>
 
       <app-goal-details *ngIf="goal.showDescription" [goal]='goal'></app-goal-details>
+    </div> -->
+
+    <!-- Emitting Events -->
+    <div *ngFor='let goal of goals;let i = index'>
+      <li>{{goal.name}}</li>
+      <button (click)='toogleDetails(i)'>Toogle Details</button>
+
+      <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)='completeGoal($event,i)'></app-goal-details>
     </div>
   </ul>
   <!-- create *ngIf directive that adds some conditional logic to our templates. -->

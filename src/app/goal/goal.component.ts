@@ -34,6 +34,13 @@ export class GoalComponent implements OnInit {
   toogleDetails(index){
         this.goals[index].showDescription = !this.goals[index].showDescription;
     }
+
+    // Event Emitting
+        completeGoal(isComplete,index){
+           if (isComplete){
+               this.goals.splice(index,1);
+               }
+               }
   constructor() { }
 
   ngOnInit() {
