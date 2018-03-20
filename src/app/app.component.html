@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+    <hr>
+  </h1>
+  <h1> My Goals </h1>
+  <hr>
+  <p> My goal for today is {{goal}} </p>
+  <hr>
+
+  <div class="">
+    <ul>
+      <li *ngFor='let goal of goals'>{{goal}}</li>
+    </ul>
+  </div>
