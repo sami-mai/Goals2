@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 // import Goal class here
-import { Goal } from './goal';
+// import { Goal } from './goal';
 
 
 @Component({
@@ -14,15 +14,15 @@ export class AppComponent {
   // goals:string[];
 
 // Change array of Goals
-  goals = [
-        new Goal(1,'Watch Finding Nemo'),
-        new Goal(2,'Buy Cookies'),
-        new Goal(3, 'Get new Phone Case'),
-        new Goal(4, 'Get Dog Food'),
-        new Goal(5, 'Solve math homework'),
-        new Goal(6, 'Plot my world domination plan'),
-
-    ]
+  // goals = [
+  //       new Goal(1,'Watch Finding Nemo'),
+  //       new Goal(2,'Buy Cookies'),
+  //       new Goal(3, 'Get new Phone Case'),
+  //       new Goal(4, 'Get Dog Food'),
+  //       new Goal(5, 'Solve math homework'),
+  //       new Goal(6, 'Plot my world domination plan'),
+  //
+  //   ]
 
   constructor(){
 
