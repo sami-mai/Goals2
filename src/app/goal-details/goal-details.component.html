@@ -1,4 +1,6 @@
 <p>
   {{goal.description}}
-  <button (click)='goalComplete(true)'>Complete</button>
 </p>
+<!-- add the pipe dateCount to our completeDate property.  -->
+<p>This goal will be completed in {{goal.completeDate|dateCount}} days</p>
+<button (click)='goalComplete(true)'>Complete</button>
