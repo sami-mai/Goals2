@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+// import FormsModule
+import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { GoalComponent } from './goal/goal.component';
@@ -21,6 +22,8 @@ import { GoalFormComponent } from './goal-form/goal-form.component';
   ],
   imports: [
     BrowserModule
+    // import FormsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
