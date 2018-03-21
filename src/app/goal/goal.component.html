@@ -55,6 +55,14 @@
 <!-- <p *ngIf='goals.length > 5'>You have too many goals</p> -->
 <!-- </div> -->
 
+<!-- Add form component -->
+<div class="container">
+  <div class="row">
+    <app-goal-form></app-goal-form>
+  </div>
+</div>
+
+<!-- Adding Bootstrap -->
 <div class="container">
   <div class="row" *ngFor="let goal of goals;let i = 'index'">
     <div class="row">
