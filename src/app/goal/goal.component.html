@@ -19,13 +19,38 @@
     </div> -->
 
     <!-- Emitting Events -->
-    <div *ngFor='let goal of goals;let i = index'>
+    <!-- <div *ngFor='let goal of goals;let i = index'>
       <li>{{goal.name}}</li>
       <button (click)='toogleDetails(i)'>Toogle Details</button>
 
       <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)='completeGoal($event,i)'></app-goal-details>
     </div>
+  </ul> -->
+    <!-- create *ngIf directive that adds some conditional logic to our templates. -->
+    <!-- <p *ngIf='goals.length > 5'>You have too many goals</p> -->
+
+
+    <!-- Custom Directive -->
+
+    <!-- <div *ngFor='let goal of goals;let i = index'>
+      <li id="{{i}}" appStrikethrough>{{goal.name}}</li>
+      <button (click)='toogleDetails(i)'>Toogle Details</button>
+
+      <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)='completeGoal($event,i)'></app-goal-details>
+
+    </div> -->
+
+    <!-- Pipes: display the dates when we list out our goals -->
+    <div *ngFor='let goal of goals;let i = index'>
+      <!-- <li  id="{{i}}" appStrikethrough>{{goal.name}} due on {{goal.completeDate|date}}</li> -->
+      <!-- add another pipe uppercase this will transform our date to uppercase -->
+      <li id="{{i}}" appStrikethrough>{{goal.name}}. Due on {{goal.completeDate|date|uppercase}}</li>
+      <button (click)='toogleDetails(i)'>Toogle Details</button>
+
+      <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)='completeGoal($event,i)'></app-goal-details>
+
+    </div>
+
   </ul>
-  <!-- create *ngIf directive that adds some conditional logic to our templates. -->
   <p *ngIf='goals.length > 5'>You have too many goals</p>
 </div>
