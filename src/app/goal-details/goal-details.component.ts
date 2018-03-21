@@ -13,7 +13,12 @@ export class GoalDetailsComponent implements OnInit {
   // Emitting Events
   @Output()isComplete = new EventEmitter<boolean>();
 
-  goalComplete(complete:boolean){
+  // goalComplete(complete:boolean){
+  //   this.isComplete.emit(complete);
+  // }
+
+  // remove the goalComplete function in our goal-details component class. We replace it with our new goalDelete` function.
+  goalDelete(complete:boolean){
     this.isComplete.emit(complete);
   }
 
