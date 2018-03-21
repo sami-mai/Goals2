@@ -58,7 +58,8 @@
 <!-- Add form component -->
 <div class="container">
   <div class="row">
-    <app-goal-form></app-goal-form>
+    <!-- add the output event addGoal that triggers the addNewGoal class passing in the new goal that was emitted -->
+    <app-goal-form (addGoal)="addNewGoal($event)"></app-goal-form>
   </div>
 </div>
 

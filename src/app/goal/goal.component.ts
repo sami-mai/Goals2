@@ -63,6 +63,15 @@ export class GoalComponent implements OnInit {
             }
         }
     }
+// Submit form
+// create the addNewGoal function that takes a goal object as an argument
+    addNewGoal(goal){
+        let goalLength = this.goals.length;
+        goal.id=goalLength+1;
+        goal.completeDate = new Date(goal.completeDate)
+        this.goals.push(goal)
+
+    }
 
 
   constructor() { }
