@@ -47,11 +47,23 @@ export class GoalComponent implements OnInit {
     }
 
     // Event Emitting
-        completeGoal(isComplete,index){
-           if (isComplete){
-               this.goals.splice(index,1);
-               }
-               }
+        // completeGoal(isComplete,index){
+        //    if (isComplete){
+        //        this.goals.splice(index,1);
+        //        }
+        //        }
+
+// create the deleteGoal function that takes the boolean value and index of the goal
+        deleteGoal(isComplete,index){
+        if (isComplete){
+            let toDelete=confirm(`Are you sure you want to delete ${this.goals[index].name}`)
+// create the toDelete boolean variable that calls the Javascript confirm function
+            if(toDelete){
+                this.goals.splice(index,1)
+            }
+        }
+    }
+
 
   constructor() { }
 
