@@ -1,38 +1,38 @@
 <!-- Template logic -->
 
-<div class="">
-  <ul>
-    <!-- <li *ngFor='let goal of goals'>{{goal.id}}.- {{goal.name}}</li> -->
+<!-- <div class="container"> -->
+<!-- <ul> -->
+<!-- <li *ngFor='let goal of goals'>{{goal.id}}.- {{goal.name}}</li> -->
 
-    <!-- Input Property binding -->
-    <!-- <div *ngFor='let goal of goals'>
+<!-- Input Property binding -->
+<!-- <div *ngFor='let goal of goals'>
       <li>{{goal.name}}</li>
       <app-goal-details [goal]='goal'></app-goal-details>
     </div> -->
 
-    <!-- Output Property binding -->
-    <!-- <div *ngFor='let goal of goals;let i = index'>
+<!-- Output Property binding -->
+<!-- <div *ngFor='let goal of goals;let i = index'>
       <li>{{goal.name}}</li>
       <button (click)='toogleDetails(i)'>Toogle Details</button>
 
       <app-goal-details *ngIf="goal.showDescription" [goal]='goal'></app-goal-details>
     </div> -->
 
-    <!-- Emitting Events -->
-    <!-- <div *ngFor='let goal of goals;let i = index'>
+<!-- Emitting Events -->
+<!-- <div *ngFor='let goal of goals;let i = index'>
       <li>{{goal.name}}</li>
       <button (click)='toogleDetails(i)'>Toogle Details</button>
 
       <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)='completeGoal($event,i)'></app-goal-details>
     </div>
   </ul> -->
-    <!-- create *ngIf directive that adds some conditional logic to our templates. -->
-    <!-- <p *ngIf='goals.length > 5'>You have too many goals</p> -->
+<!-- create *ngIf directive that adds some conditional logic to our templates. -->
+<!-- <p *ngIf='goals.length > 5'>You have too many goals</p> -->
 
 
-    <!-- Custom Directive -->
+<!-- Custom Directive -->
 
-    <!-- <div *ngFor='let goal of goals;let i = index'>
+<!-- <div *ngFor='let goal of goals;let i = index'>
       <li id="{{i}}" appStrikethrough>{{goal.name}}</li>
       <button (click)='toogleDetails(i)'>Toogle Details</button>
 
@@ -40,17 +40,34 @@
 
     </div> -->
 
-    <!-- Pipes: display the dates when we list out our goals -->
-    <div *ngFor='let goal of goals;let i = index'>
-      <!-- <li  id="{{i}}" appStrikethrough>{{goal.name}} due on {{goal.completeDate|date}}</li> -->
-      <!-- add another pipe uppercase this will transform our date to uppercase -->
-      <li id="{{i}}" appStrikethrough>{{goal.name}}. Due on {{goal.completeDate|date|uppercase}}</li>
-      <button (click)='toogleDetails(i)'>Toogle Details</button>
+<!-- Pipes: display the dates when we list out our goals -->
+<!-- <div *ngFor='let goal of goals;let i = index'> -->
+<!-- <li  id="{{i}}" appStrikethrough>{{goal.name}} due on {{goal.completeDate|date}}</li> -->
+<!-- add another pipe uppercase this will transform our date to uppercase -->
+<!-- <li id="{{i}}" appStrikethrough>{{goal.name}}. Due on {{goal.completeDate|date|uppercase}}</li> -->
+<!-- <button (click)='toogleDetails(i)'>Toogle Details</button> -->
 
-      <!-- <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)='completeGoal($event,i)'></app-goal-details> -->
-      <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)='deleteGoal($event,i)'></app-goal-details>
+<!-- <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)='completeGoal($event,i)'></app-goal-details> -->
+<!-- <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)='deleteGoal($event,i)'></app-goal-details> -->
+<!-- </div> -->
+
+<!-- </ul> -->
+<!-- <p *ngIf='goals.length > 5'>You have too many goals</p> -->
+<!-- </div> -->
+
+<div class="container">
+  <div class="row" *ngFor="let goal of goals;let i = 'index'">
+    <div class="row">
+      <h4 id="{{i}}" appStrikethrough>{{goal.name}} due on {{goal.completeDate|date|uppercase}}</h4>
+      <button class="btn btn-primary" (click)='toogleDetails(i)'>Toogle Details</button>
     </div>
 
-  </ul>
-  <p *ngIf='goals.length > 5'>You have too many goals</p>
+    <div class="row" *ngIf="goal.showDescription">
+      <app-goal-details [goal]='goal' (isComplete)='deleteGoal($event,i)'></app-goal-details>
+    </div>
+
+  </div>
+
 </div>
+
+<p *ngIf='goals.length > 5'>You have too many goals</p>
